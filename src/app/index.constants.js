@@ -82,5 +82,9 @@
     },
     'preferredLocale': 'en'
   })
+  .constant('vimeoAPI',{
+    'API_BASE_URL': 'https://api.vimeo.com/',
+    'ACCESS_TOKEN': '7abdb510b58b34975441afa9692c4c4f'
+  });
 
 })();

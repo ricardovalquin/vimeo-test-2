@@ -1,0 +1,15 @@
+<section class="home-container">
+  <div class="video-container">
+    <div class="figure-wrapper" ui-sref="detail" ng-repeat="video in categoryCtrl.videos.data">
+      <figure>
+        {{video.pictures.sizes[1].link}}
+        <img ng-src="{{trustAsResourcUrl(video.pictures.sizes[1].link)}}" alt="Video-img" width="200" height="150"/>
+        <figcaption>VIDEO 1.</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="paginator">
+    pages
+  </div>
+</section>
