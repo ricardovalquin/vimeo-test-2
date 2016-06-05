@@ -8,9 +8,9 @@
   function CategoryController($log, videos) {
     this.videos = videos;
 
-    $log.debug('asdfasdfasdf');
-    $log.debug(videos);
-    $log.debug('asdfasdfasdf');
+    //$log.debug('asdfasdfasdf');
+    //$log.debug(videos);
+    //$log.debug('asdfasdfasdf');
     //this.videos = CategoriesFactory.getVideos($stateParams.categoryId).then(function(response){$log.debug(response);});
 
 

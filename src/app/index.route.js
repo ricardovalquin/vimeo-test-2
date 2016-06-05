@@ -8,13 +8,6 @@
   /** @ngInject */
   function routerConfig($stateProvider, $urlRouterProvider) {
     $stateProvider
-      //.state('home', {
-      //  url: '/',
-      //  templateUrl: 'app/main/main.html',
-      //  controller: 'MainController',
-      //  controllerAs: 'main'
-      //})
-
       .state('home', {
         url:'',
         abstract: true,
@@ -61,6 +54,31 @@
           }
         }
 
+      })
+      .state('home.categories.detail', {
+        url: '/:videoId',
+        onEnter: function($state, $stateParams) {
+          if(!$stateParams.categoryId && !$stateParams.videoId) {
+            $state.go('home.categories');
+          }
+        },
+        params: {
+          categoryId: '',
+          videoId: ''
+        },
+        resolve: {
+          /** @ngInject */
+          video: function($stateParams, CategoriesFactory) {
+            return CategoriesFactory.getVideo($stateParams.categoryId, $stateParams.videoId);
+          }
+        },
+        views: {
+          'wrapper@': {
+            templateUrl: 'app/components/video/video.html',
+            controller: 'VideoController',
+            controllerAs: 'videoCtrl'
+          }
+        }
       });
 
     $urlRouterProvider.otherwise('/category/');

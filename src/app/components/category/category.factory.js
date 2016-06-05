@@ -8,7 +8,7 @@
   /** @ngInject */
   function CategoriesFactory($http, vimeoAPI) {
     return {
-      all: function() {
+      all: function () {
         return $http.get(
           vimeoAPI.API_BASE_URL + 'categories'
         ).then(function successCallback(response) {
@@ -18,9 +18,9 @@
           }
         );
       },
-      formatCategories: function(categories) {
-        if(categories) {
-          return categories.map(function(category){
+      formatCategories: function (categories) {
+        if (categories) {
+          return categories.map(function (category) {
             var uri = category.uri.split('/');
             category.id = uri[2];
             return category;
@@ -30,17 +30,28 @@
           return categories;
         }
       },
-      getVideos: function(category) {
-        if(category) {
+      getVideos: function (category) {
+        if (category) {
           return $http.get(
             vimeoAPI.API_BASE_URL + 'categories/' + category + '/videos?page=1&per_page=12'
-          ).then(function successCallback(response){
+          ).then(function successCallback(response) {
             return response.data;
-          }, function errorCallback(error){
+          }, function errorCallback(error) {
             return error;
           });
         }
         //return $q.reject("no category provided")
+      },
+      getVideo: function (category, video) {
+        if (category && video) {
+          return $http.get(
+            vimeoAPI.API_BASE_URL + 'categories/' + category + '/videos/' + '108650530'//video
+          ).then(function successCallback(response) {
+            return response.data;
+          }, function errorCallback(error) {
+            return error;
+          });
+        }
       }
     }
   }

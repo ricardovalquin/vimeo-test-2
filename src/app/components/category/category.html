@@ -1,8 +1,9 @@
 <section class="home-container">
+  <header-section></header-section>
   <div class="video-container">
-    <div class="figure-wrapper" ui-sref="detail" ng-repeat="video in categoryCtrl.videos.data">
+    <div class="figure-wrapper" ui-sref="home.categories.detail" ng-repeat="video in categoryCtrl.videos.data">
       <figure>
-        {{video.pictures.sizes[1].link}}
+        <!--{{video.pictures.sizes[1].link}}-->
         <img ng-src="{{trustAsResourcUrl(video.pictures.sizes[1].link)}}" alt="Video-img" width="200" height="150"/>
         <figcaption>VIDEO 1.</figcaption>
       </figure>

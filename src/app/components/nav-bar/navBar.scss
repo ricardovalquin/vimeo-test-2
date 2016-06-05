@@ -15,13 +15,18 @@
   background: linear-gradient(to bottom, rgba(111,96,161,1) 0%, rgba(83,70,125,1) 50%, rgba(44,34,77,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6f60a1', endColorstr='#2c224d', GradientType=0 );
 
-  //@include breakpoint($gt-xs-min-width) {
-  //  display: none;
-  //}
+  @media (max-width: $gt-sm-min-width) {
+    display: none;
+  }
 
   .close-nav {
-    text-align: right;
     padding: 10px;
+    display: none;
+    text-align: right;
+
+    @media (max-width: $gt-sm-min-width){
+      display: inline-block;
+    }
 
     a {
       cursor: pointer;
@@ -32,7 +37,7 @@
     width: 100%;
     height: 60px;
     margin-bottom: 30px;
-    background: url('../../assets/img/vimeotest-logo.png') no-repeat;
+    background: url('../../assets/images/vimeotest-logo.png') no-repeat;
   }
 
   .nav-categories {
