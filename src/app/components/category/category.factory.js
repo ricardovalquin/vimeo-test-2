@@ -42,15 +42,16 @@
         }
         //return $q.reject("no category provided")
       },
-      getVideo: function (category, video) {
-        if (category && video) {
-          return $http.get(
-            vimeoAPI.API_BASE_URL + 'categories/' + category + '/videos/' + '108650530'//video
-          ).then(function successCallback(response) {
-            return response.data;
-          }, function errorCallback(error) {
-            return error;
+      formatVideos: function(videos){
+        if(videos) {
+          return videos.map(function(video) {
+            var uri = video.uri.split('/');
+            video.id = uri[2];
+            return video;
           });
+        }
+        else {
+          return videos;
         }
       }
     }

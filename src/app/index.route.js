@@ -45,6 +45,17 @@
           videos: function($stateParams, CategoriesFactory){
             return CategoriesFactory.getVideos($stateParams.categoryId);
           }
+
+          //videos: function(videosApiResponse, CategoriesFactory){
+          //  var videos;
+          //  if(videosApiResponse.data.length > 0){
+          //    videos = CategoriesFactory.formatVideos(videosApiResponse.data)
+          //  }
+          //  else {
+          //    videos = [];
+          //  }
+          //  return videos;
+          //}
         },
         views: {
           'wrapper@': {
@@ -68,9 +79,7 @@
         },
         resolve: {
           /** @ngInject */
-          video: function($stateParams, CategoriesFactory) {
-            return CategoriesFactory.getVideo($stateParams.categoryId, $stateParams.videoId);
-          }
+
         },
         views: {
           'wrapper@': {

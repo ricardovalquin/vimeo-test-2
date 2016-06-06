@@ -1,10 +1,10 @@
 <section class="home-container">
   <header-section></header-section>
   <div class="video-container">
-    <div class="figure-wrapper" ui-sref="home.categories.detail" ng-repeat="video in categoryCtrl.videos.data">
-      <figure>
+    <div class="figure-wrapper" ng-click="categoryCtrl.videoDetail(video)" ng-repeat="video in categoryCtrl.videos.data"> <!--ui-sref="home.categories.detail" -->
+      <figure class="animated bounce">
         <!--{{video.pictures.sizes[1].link}}-->
-        <img ng-src="{{trustAsResourcUrl(video.pictures.sizes[1].link)}}" alt="Video-img" width="200" height="150"/>
+        <img ng-src="{{video.pictures.sizes[1].link}}" alt="Video-img" width="200" height="150"/>
         <figcaption>VIDEO 1.</figcaption>
       </figure>
     </div>

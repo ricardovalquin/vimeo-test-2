@@ -5,15 +5,18 @@
     .controller('CategoryController', CategoryController);
 
   /** @ngInject */
-  function CategoryController($log, videos) {
-    this.videos = videos;
+  function CategoryController($log, $state, videos) {
+    var vm = this;
+    vm.videos = videos;
 
-    //$log.debug('asdfasdfasdf');
-    //$log.debug(videos);
-    //$log.debug('asdfasdfasdf');
-    //this.videos = CategoriesFactory.getVideos($stateParams.categoryId).then(function(response){$log.debug(response);});
+    $log.debug('asdfasdfasdf');
+    $log.debug(vm.videos);
+    $log.debug('asdfasdfasdf');
 
-
+    vm.videoDetail = function(video){
+        var id = video.uri.split('/')[2];
+        $state.go('home.categories.detail', {videoId: id});
+    }
 
   }
 })();
