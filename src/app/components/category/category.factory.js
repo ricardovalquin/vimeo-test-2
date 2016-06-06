@@ -42,6 +42,18 @@
         }
         //return $q.reject("no category provided")
       },
+      getVideo: function (category, video) {
+        if (category && video) {
+          return $http.get(
+            vimeoAPI.API_BASE_URL + 'categories/' + category + '/videos/' + video
+          ).then(function successCallback(response) {
+              return response.data;
+            }, function errorCallcabk(error) {
+              return error;
+            }
+          );
+        }
+      },
       formatVideos: function(videos){
         if(videos) {
           return videos.map(function(video) {

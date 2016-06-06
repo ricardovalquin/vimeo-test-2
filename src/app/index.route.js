@@ -79,7 +79,9 @@
         },
         resolve: {
           /** @ngInject */
-
+          video: function($stateParams, CategoriesFactory) {
+            return CategoriesFactory.getVideo($stateParams.categoryId, $stateParams.videoId);
+          }
         },
         views: {
           'wrapper@': {
