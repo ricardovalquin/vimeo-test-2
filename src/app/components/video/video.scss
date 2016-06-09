@@ -3,3 +3,33 @@ iframe {
   width: 100%;
   height: 40%;
 }
+
+.video-data {
+  text-align: right;
+  border-bottom: 1px solid gray;
+  padding-right: 10px;
+  color: #879cab;
+
+  label {
+    margin: 0 10px;
+  }
+
+  .video-comments {
+
+    &::before {
+      background: url('../../../assets/images/vimeotest-assets.png') no-repeat 0 0;
+      content: " ";
+      width: 100px;
+      height: 100px;
+    }
+  }
+}
+
+.video-description {
+  width: 80%;
+  padding-left: 10px;
+  @media (max-width: 600px) {
+    width: 100%;
+    padding-right: 10px;
+  }
+}

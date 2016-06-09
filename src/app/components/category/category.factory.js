@@ -30,6 +30,13 @@
           return categories;
         }
       },
+      getLinks: function(categories){
+        return categories.map(function(category){
+            var links = {};
+            links.id = category.id;
+            return links;
+        });
+      },
       getVideos: function (category) {
         if (category) {
           return $http.get(

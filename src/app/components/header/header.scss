@@ -1,9 +1,15 @@
 .header-section {
   width: 100%;
-  height: $header-height;
+  height: 70px;
+  z-index: 9999;
   position: fixed;
-  background-color: $header-bg-color;
-  border-bottom: 1px solid $border-color;
+  margin-left: 300px;
+  background-color: #fafafa;
+  border-bottom: 1px solid #D2D2D2;
+
+  @media (max-width: 960px){
+    margin-left: 0;
+  }
 
   .toogle-nav {
     top: 50%;
@@ -14,10 +20,9 @@
     margin-left: 10px;
     margin-top: -13px;
     position: absolute;
-    display: inline-block;
     background: url('../../../assets/images/vimeotest-assets.png') no-repeat 0 0;
 
-    @media (max-width: $gt-sm-min-width){
+    @media (max-width: 960px){
       display: inline-block;
     }
   }
@@ -30,7 +35,7 @@
     margin-right: 300px;
     display: inline-block;
 
-    @media (max-width: $gt-sm-min-width){
+    @media (max-width: 960px){
       margin-right: 10px;
     }
 

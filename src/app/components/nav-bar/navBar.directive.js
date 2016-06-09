@@ -10,12 +10,14 @@
    return {
      restrict: 'E',
      replace: true,
-     scope: {},
+     scope: {
+       links: '=links'
+     },
      templateUrl: 'app/components/nav-bar/navBar.html',
      controller: 'NavBarController',
      controllerAs: 'navCtrl',
-     link: function() {
-
+     link: function(scope, element, attrs) {
+       console.log('attrs= ',attrs);
      }
    }
   }

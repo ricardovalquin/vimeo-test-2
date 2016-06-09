@@ -5,13 +5,10 @@
     .controller('CategoryController', CategoryController);
 
   /** @ngInject */
-  function CategoryController($log, $state, videos) {
+  function CategoryController($log, $state, videos, links) {
     var vm = this;
     vm.videos = videos;
-
-    $log.debug('asdfasdfasdf');
-    $log.debug(vm.videos);
-    $log.debug('asdfasdfasdf');
+    vm.links = links;
 
     vm.videoDetail = function(video){
         var id = video.uri.split('/')[2];

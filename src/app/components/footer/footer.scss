@@ -6,8 +6,8 @@
   margin-left: 300px;
   padding-left: 10px;
   width: calc(100% - 300px);
-  background-color: $footer-bg-color;
-  border-top: 1px solid $border-color;
+  background-color: #eeeeee;
+  border-top: 1px solid #D2D2D2;
 
   @media (max-width: 960px) {
     width: 100%;
@@ -21,3 +21,11 @@
     padding-right: 10px;
   }
 }
+
+//.wrapper {
+//  margin-left: 300px !important;
+//
+//  @media (max-width: 960px) {
+//    margin-left: 0;
+//  }
+//}

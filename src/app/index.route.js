@@ -18,14 +18,17 @@
           },
           categories: function(CategoriesFactory, categoriesAPIResponse){
             var categories;
-            //$log.debug(categoriesAPIResponse.data);
             if(categoriesAPIResponse.data.length > 0){
               categories = CategoriesFactory.formatCategories(categoriesAPIResponse.data)
             }
-            else {
-              categories = [];
-            }
             return categories;
+          },
+          links: function(CategoriesFactory, categories){
+            var links=[];
+            if(categories){
+             links = CategoriesFactory.getLinks(categories);
+            }
+            return links;
           }
         }
       })
