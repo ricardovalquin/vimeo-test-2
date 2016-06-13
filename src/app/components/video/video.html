@@ -1,9 +1,14 @@
 <section class="video-view">
   <nav-bar links="videoCtrl.links"></nav-bar>
   <header-section></header-section>
-
-  <iframe ng-src="{{videoCtrl.videoUrl}}" frameborder="0" webkitallowfullscreen mozallowfullscreen
-          allowfullscreen></iframe>
+  <div class="video-view-wrapper">
+    <div class="video-container">
+      <div class="video">
+        <iframe ng-src="{{videoCtrl.videoUrl}}" frameborder="0" webkitallowfullscreen mozallowfullscreen
+                allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
   <div class="video-data">
     <label>{{videoCtrl.video.stats.plays}}</label>
     <label>{{videoCtrl.video.metadata.connections.likes.total}}</label>
@@ -11,8 +16,10 @@
     <label class="video-comments">{{videoCtrl.video.metadata.connections.comments.total}}</label>
   </div>
 
-  <div class="title"></div>
-  <div class="video-description">
-    {{videoCtrl.video.description}}
+  <div class="video-text">
+    <div class="title"></div>
+    <div class="video-description">
+      {{videoCtrl.video.description}}
+    </div>
   </div>
 </section>
