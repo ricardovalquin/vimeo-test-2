@@ -6,13 +6,10 @@
     .controller('VideoController', VideoController);
 
   /** @ngInject */
-  function VideoController($sce, $log, $stateParams, video){
+  function VideoController($sce, $stateParams, video, links){
     var vm = this;
     vm.video = video;
-    //$log.debug('video controller');
-    //$log.debug($stateParams);
-    //$log.debug(vm.video);
+    vm.links = links;
     vm.videoUrl = $sce.trustAsResourceUrl('//player.vimeo.com/video/' + $stateParams.videoId);
-    $log.debug('video controller');
   }
 })();

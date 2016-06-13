@@ -15,10 +15,10 @@
      },
      templateUrl: 'app/components/nav-bar/navBar.html',
      controller: 'NavBarController',
-     controllerAs: 'navCtrl',
-     link: function(scope, element, attrs) {
-       console.log('attrs= ',attrs);
-     }
+     controllerAs: 'navCtrl'//,
+     //link: function(scope, element, attrs) {
+     //
+     //}
    }
   }
 })();

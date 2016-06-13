@@ -33,32 +33,22 @@
         }
       })
       .state('home.categories', {
-        url: '/category/:categoryId',
+        url: '/category/:categoryId?page',
         onEnter: function($state, $stateParams, categories) {
           if(!$stateParams.categoryId && categories.length > 0){
-            $state.go('home.categories', {categoryId: categories[0].id});
+            $state.go('home.categories', {categoryId: categories[0].id, 'page': 1});
           }
         },
         params: {
-          categoryId: ''
-          // pagination
+          categoryId: '',
+          page: ''
         },
         resolve: {
           /** @ngInject */
-          videos: function($stateParams, CategoriesFactory){
-            return CategoriesFactory.getVideos($stateParams.categoryId);
+          videos: function($stateParams, videosFactory){
+            var page = $stateParams.page;
+            return videosFactory.getVideos($stateParams.categoryId, page);
           }
-
-          //videos: function(videosApiResponse, CategoriesFactory){
-          //  var videos;
-          //  if(videosApiResponse.data.length > 0){
-          //    videos = CategoriesFactory.formatVideos(videosApiResponse.data)
-          //  }
-          //  else {
-          //    videos = [];
-          //  }
-          //  return videos;
-          //}
         },
         views: {
           'wrapper@': {
@@ -82,8 +72,8 @@
         },
         resolve: {
           /** @ngInject */
-          video: function($stateParams, CategoriesFactory) {
-            return CategoriesFactory.getVideo($stateParams.categoryId, $stateParams.videoId);
+          video: function($stateParams, videosFactory) {
+            return videosFactory.getVideo($stateParams.categoryId, $stateParams.videoId);
           }
         },
         views: {

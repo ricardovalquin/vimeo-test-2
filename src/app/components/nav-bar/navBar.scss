@@ -1,7 +1,6 @@
 .nav-bar-container {
   width: 300px;
   height: 100%;
-  //color: white;
   display: inline-block;
   vertical-align: top;
   position: fixed;
@@ -22,7 +21,9 @@
   .close-nav {
     padding: 10px;
     display: none;
-    text-align: right;
+    float: right;
+    color: white;
+    outline: none;
 
     @media (max-width: 960px){
       display: inline-block;
@@ -30,6 +31,7 @@
 
     a {
       cursor: pointer;
+      color: white;
     }
   }
 
@@ -59,6 +61,21 @@
         background-color: #aba4c1;
 
       }
+
+      &:hover {
+        background-color: rgba(111,96,161,1);
+        border-radius: 5px;
+      }
     }
   }
+}
+
+.open {
+  display: block;
+  z-index: 2;
+}
+
+.active {
+  color: red;
+  background-color: black;
 }

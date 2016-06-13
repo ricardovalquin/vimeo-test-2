@@ -10,7 +10,9 @@
       restrict: 'E',
       scope: {},
       replace: true,
-      templateUrl: 'app/components/header/header.html'
+      templateUrl: 'app/components/header/header.html',
+      controller: 'HeaderController',
+      controllerAs: 'headerCtrl'
     }
   }
 })();

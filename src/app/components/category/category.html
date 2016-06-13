@@ -4,16 +4,19 @@
   <div class="video-wrapper">
     <div class="video-container">
       <div class="figure-wrapper" ng-click="categoryCtrl.videoDetail(video)" ng-repeat="video in categoryCtrl.videos.data"> <!--ui-sref="home.categories.detail" -->
-        <figure class="animated bounce">
-          <!--{{video.pictures.sizes[1].link}}-->
-          <img ng-src="{{video.pictures.sizes[1].link}}" alt="Video-img" width="200" height="150"/>
+        <figure class="animated zoomIn">
+          <img ng-src="{{video.pictures.sizes[2].link}}" alt="Video-img" width="300" height="170"/>
           <figcaption class="video-name">{{video.name}}.</figcaption>
         </figure>
       </div>
     </div>
 
     <div class="paginator">
-      pages
+      <div class="pagination-container">
+        <!--<uib-pagination total-items="vm.totalVideos" ng-model="vm.page" ng-change="changePage()"></uib-pagination>-->
+        <uib-pagination total-items="vm.totalVideos" ng-model="vm.page" max-size="vm.maxSize"
+                        items-per-page="vm.perPage" ng-change="vm.changePage()" boundary-link-numbers="true" rotate="false"></uib-pagination>
+      </div>
     </div>
   </div>
 </section>
