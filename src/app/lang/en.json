@@ -2,5 +2,10 @@
   "global": {
     "POWERED_BY": "Powered by Talos Digital",
     "SEARCH_VIDEOS": "Search videos"
+  },
+  "video": {
+    "OF": "of",
+    "SINCE": "since",
+    "YEARS": "years"
   }
 }

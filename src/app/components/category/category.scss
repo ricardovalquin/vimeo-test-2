@@ -23,9 +23,10 @@
         margin: 10px;
         display: inline-block;
         cursor: pointer;
+        outline: none;
 
         figure {
-          @media (max-width: 400px) {
+          @media (max-width: 540px) {
             border-bottom: 1px solid #D2D2D2;
           }
         }

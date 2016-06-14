@@ -12,10 +12,10 @@
 
 
 .video-container {
-  position: relative;
-  overflow: scroll;
   clear: both;
+  overflow: scroll;
   padding-top: 70px;
+  position: relative;
 
   .video {
     position: relative;
@@ -31,22 +31,26 @@
     }
 
     iframe {
-      position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
+      position: absolute;
     }
   }
 }
 
 
 .video-data {
-  text-align: right;
-  border-bottom: 1px solid gray;
-  padding-right: 10px;
   color: #879cab;
+  text-align: right;
   margin-left: 300px;
+  padding-right: 10px;
+  border-bottom: 1px solid gray;
+
+  @media (max-width: 960px) {
+    margin-left: 0;
+  }
 
   label {
     margin: 0 10px;
@@ -64,11 +68,83 @@
 }
 
 .video-text {
+  margin-top: 30px;
   margin-left: 300px;
+  padding-left: 20px;
+
+  @media (max-width: 960px) {
+    margin-left: 0;
+  }
+
+  .title {
+    margin-bottom: 20px;
+    position: relative;
+    margin-left: 75px;
+
+    @media (max-width: 540px) {
+      margin-left: 0;
+    }
+  }
+
+  .image {
+    width: auto;
+    //margin-right: 10px;
+    display: inline-block;
+    position: absolute;
+    left: -75px;
+    top: 0;
+    margin: 0;
+
+    @media (max-width: 540px) {
+      display: none;
+    }
+
+    img {
+      border-radius: 50%;
+    }
+  }
+
+  .video-name {
+    width: auto;
+    padding-right: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 20px;
+
+    @media (max-width: 540px) {
+      margin-left: 0;
+    }
+
+    .video-title {
+      width: 270px;
+      color: #635492;
+      font-size: 40px;
+      margin-bottom: 0;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
 
   .video-description {
     width: 80%;
-    padding-left: 10px;
+    margin-right: 20px;
+    div {
+      white-space: normal;
+      display: block;
+      display: -webkit-box;
+      max-width: 100%;
+      height: 73px;
+      margin: 0 auto;
+      font-size: 24px;
+      line-height: 1.5;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-weight: normal;
+    }
+
     @media (max-width: 600px) {
       width: 100%;
       padding-right: 10px;

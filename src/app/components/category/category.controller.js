@@ -5,12 +5,10 @@
     .controller('CategoryController', CategoryController);
 
   /** @ngInject */
-  function CategoryController($log, $state, $stateParams, videos, links) {
+  function CategoryController($log, $state, $stateParams, videos) {
     var vm = this;
     vm.videos = videos;
-    vm.links = links;
     vm.totalVideos = videos.total;
-    $log.debug(vm.totalVideos);
     vm.maxSize = 100;
     vm.perPage = 12;
     vm.page = $stateParams.page;

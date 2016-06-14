@@ -10,7 +10,14 @@
     $stateProvider
       .state('home', {
         url:'',
-        abstract: true,
+        //abstract: true,
+        views: {
+          'wrapper@': {
+            templateUrl: 'app/main/main.html',
+            controller: 'MainController',
+            controllerAs: 'mainCtrl'
+          }
+        },
         resolve: {
           /** @ngInject */
           categoriesAPIResponse: function(CategoriesFactory){
@@ -23,10 +30,10 @@
             }
             return categories;
           },
-          links: function(CategoriesFactory, categories){
-            var links=[];
-            if(categories){
-             links = CategoriesFactory.getLinks(categories);
+          links: function(CategoriesFactory, categories) {
+            var links = [];
+            if (categories) {
+              links = CategoriesFactory.getLinks(categories);
             }
             return links;
           }
@@ -34,11 +41,11 @@
       })
       .state('home.categories', {
         url: '/category/:categoryId?page',
-        onEnter: function($state, $stateParams, categories) {
-          if(!$stateParams.categoryId && categories.length > 0){
-            $state.go('home.categories', {categoryId: categories[0].id, 'page': 1});
-          }
-        },
+        //onEnter: function($state, $stateParams, categories) {
+        //  if(!$stateParams.categoryId && categories.length > 0){
+        //    $state.go('home.categories', {categoryId: categories[0].id, 'page': 1});
+        //  }
+        //},
         params: {
           categoryId: '',
           page: ''
@@ -51,7 +58,7 @@
           }
         },
         views: {
-          'wrapper@': {
+          'content@home': {
             templateUrl: 'app/components/category/category.html',
             controller: 'CategoryController',
             controllerAs: 'categoryCtrl'
@@ -77,7 +84,7 @@
           }
         },
         views: {
-          'wrapper@': {
+          'content@home': {
             templateUrl: 'app/components/video/video.html',
             controller: 'VideoController',
             controllerAs: 'videoCtrl'

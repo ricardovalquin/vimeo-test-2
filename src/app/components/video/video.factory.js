@@ -13,7 +13,7 @@
           return $http.get(
             vimeoAPI.API_BASE_URL + 'categories/' + category + '/videos?page=' + page + '&per_page=12'
           ).then(function successCallback(response) {
-            $log.debug(response.data);
+            //$log.debug(response.data);
             return response.data;
           }, function errorCallback(error) {
             return error;

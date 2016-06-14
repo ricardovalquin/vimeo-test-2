@@ -11,14 +11,19 @@
      restrict: 'E',
      replace: true,
      scope: {
-       links: '=links'
+       links: '=',
+       activeLink: '=',
+       clickLink: '&'
      },
      templateUrl: 'app/components/nav-bar/navBar.html',
      controller: 'NavBarController',
-     controllerAs: 'navCtrl'//,
-     //link: function(scope, element, attrs) {
-     //
-     //}
+     controllerAs: 'navCtrl',
+     link: function(scope, element, attrs) {
+       //console.log(scope.active);
+       scope.goToCategory = function(link) {
+         scope.clickLink(link);
+       }
+     }
    }
   }
 })();

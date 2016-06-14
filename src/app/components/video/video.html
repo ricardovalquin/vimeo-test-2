@@ -1,6 +1,4 @@
 <section class="video-view">
-  <nav-bar links="videoCtrl.links"></nav-bar>
-  <header-section></header-section>
   <div class="video-view-wrapper">
     <div class="video-container">
       <div class="video">
@@ -17,9 +15,19 @@
   </div>
 
   <div class="video-text">
-    <div class="title"></div>
+    <div class="title">
+      <div class="image">
+        <img ng-if="videoCtrl.video.user.pictures.sizes[1].link" ng-src="{{videoCtrl.video.user.pictures.sizes[1].link}}" alt="User logo">
+        <img ng-if="!videoCtrl.video.user.pictures.sizes[1].link" src="../../assets/images/vimeo-logo.png" alt="User logo" width="75" height="75">
+      </div>
+      <div class="video-name">
+        <p class="video-title"><b>{{videoCtrl.video.name}}</b></p>
+        <p>{{'video.OF' | translate}} <B>{{videoCtrl.video.user.name}}</B> | {{'video.SINCE' | translate}} <span >{{videoCtrl.video.created_time}}</span> {{'video.YEARS' | translate}}</p>
+      </div>
+    </div>
+
     <div class="video-description">
-      {{videoCtrl.video.description}}
+      <div>{{videoCtrl.video.description}}</div>
     </div>
   </div>
 </section>

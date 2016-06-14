@@ -2,6 +2,6 @@
   <div class="close-nav" ng-click="navCtrl.closeNav()"><a>X</a></div>
   <div class="app-name"></div>
   <div class="nav-categories">
-    <p ng-repeat="link in links" ng-click="navCtrl.goToCategory(link.id)" ng-class="{active: navCtrl.params.categoryId == link.id}">{{link.id}}</p>
+    <p ng-repeat="link in links | limitTo:8" ng-click="goToCategory({category: link.id})" ng-class="{active: activeLink == link.id}">{{link.id}}{{activeLink}}</p>
   </div>
 </aside>

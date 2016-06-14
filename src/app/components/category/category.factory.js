@@ -31,12 +31,11 @@
         }
       },
       getLinks: function(categories){
-        var fullLinks = categories.map(function(category){
+        var links = categories.map(function(category){
             var links = {};
             links.id = category.id;
             return links;
         });
-        var links = fullLinks.slice(0, 8);
         return links;
       }
     }

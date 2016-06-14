@@ -2,6 +2,10 @@
   "global": {
     "POWERED_BY": "Creada por Talos Digital",
     "SEARCH_VIDEOS": "Buscar videos"
-
+  },
+  "video": {
+    "OF": "por",
+    "SINCE": "hace",
+    "YEARS": "años"
   }
 }
