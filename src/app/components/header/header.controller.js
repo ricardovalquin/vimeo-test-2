@@ -12,7 +12,7 @@
 
     vm.showNav = function () {
       var nav = angular.element(document.querySelector('.nav-bar-container'));
-      nav.addClass('open');
+      nav.addClass('open slideInLeft');
     }
   }
 

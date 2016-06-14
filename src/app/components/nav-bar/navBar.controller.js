@@ -16,7 +16,7 @@
 
     vm.closeNav = function() {
       var nav = angular.element(document.querySelector('.nav-bar-container'));
-      nav.removeClass('open');
+      nav.removeClass('open slideInLeft');
     };
   }
 })();
