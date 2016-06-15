@@ -23,5 +23,9 @@
       var id = video.uri.split('/')[2];
       $state.go('home.categories.detail', {videoId: id});
     };
+
+    vm.search = function(query) {
+      $state.go('home.search', {query: query, 'page': 1});
+    };
   }
 })();

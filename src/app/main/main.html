@@ -1,6 +1,6 @@
 <section class="main-section">
   <nav-bar links="mainCtrl.links" active="mainCtrl.active" click-link="mainCtrl.changeCategory(category)"></nav-bar>
-  <header-section></header-section>
+  <header-section search-videos="mainCtrl.search(query)"></header-section>
   <div class="views" ui-view="content"></div>
   <footer-section></footer-section>
 </section>

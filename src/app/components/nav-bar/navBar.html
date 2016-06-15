@@ -1,6 +1,8 @@
 <aside class="nav-bar-container animated">
   <div class="close-nav" ng-click="navCtrl.closeNav()"><a>X</a></div>
-  <div class="app-name"></div>
+  <div class="app-name">
+    <img src="../../../assets/images/vimeotest-logo.png" alt="Vimeo test app" width="270" height="70">
+  </div>
   <div class="nav-categories">
     <p ng-repeat="link in links | limitTo:8" ng-click="goToCategory({category: link.id})" ng-class="{active: activeLink == link.id}">{{link.id}}{{activeLink}}</p>
   </div>

@@ -1,6 +1,6 @@
 <section class="header-section">
   <div class="toogle-nav" ng-click="headerCtrl.showNav()"></div>
   <div class="search">
-    <input type="text" placeholder="{{'global.SEARCH_VIDEOS' | translate}}"/>
+    <input type="text" placeholder="{{'global.SEARCH_VIDEOS' | translate}}" ui-keypress="{13:'searchForVideos()'}"/>
   </div>
 </section>

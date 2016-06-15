@@ -19,10 +19,9 @@
      controller: 'NavBarController',
      controllerAs: 'navCtrl',
      link: function(scope, element, attrs) {
-       //console.log(scope.active);
        scope.goToCategory = function(link) {
          scope.clickLink(link);
-       }
+       };
      }
    }
   }

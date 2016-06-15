@@ -90,6 +90,26 @@
             controllerAs: 'videoCtrl'
           }
         }
+      })
+      .state('home.search', {
+        url: '/search/:query?page',
+        params: {
+          query: '',
+          page: ''
+        },
+        resolve: {
+          /** @ngInject */
+          videos: function($stateParams, videosFactory) {
+            return videosFactory.searchVideos($stateParams.query, $stateParams.page)
+          }
+        },
+        views: {
+          'content@home': {
+            templateUrl: 'app/components/categoy/categoy.html',
+            controller: 'CategoryController',
+            controllerAs: 'categoryCtrl'
+          }
+        }
       });
 
     $urlRouterProvider.otherwise('/category/');

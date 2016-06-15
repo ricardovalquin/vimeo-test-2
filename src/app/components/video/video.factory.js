@@ -43,6 +43,17 @@
         else {
           return videos;
         }
+      },
+      searchVideos: function(query, page) {
+        if(query) {
+          return $http.get(
+            vimeoAPI.API_BASE_URL + 'videos/?page=' + page + '&per_page=12&query='+ query
+          ).then(function successCallbac(response) {
+            return response.data;
+          }, function errorCallback(error) {
+            return error;
+          })
+        }
       }
     }
   }
