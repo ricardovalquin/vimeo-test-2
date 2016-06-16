@@ -8,10 +8,10 @@
     </div>
   </div>
   <div class="video-data">
-    <label>{{videoCtrl.video.stats.plays}}</label>
-    <label>{{videoCtrl.video.metadata.connections.likes.total}}</label>
-    <label>{{videoCtrl.video.metadata.connections.pictures.total}}</label>
-    <label class="video-comments">{{videoCtrl.video.metadata.connections.comments.total}}</label>
+    <label>{{videoCtrl.video.stats.plays | thousandSuffix}}</label>
+    <label>{{videoCtrl.video.metadata.connections.likes.total | thousandSuffix}}</label>
+    <label>{{videoCtrl.video.metadata.connections.pictures.total | thousandSuffix}}</label>
+    <label class="video-comments">{{videoCtrl.video.metadata.connections.comments.total | thousandSuffix}}</label>
   </div>
 
   <div class="video-text">
@@ -22,7 +22,7 @@
       </div>
       <div class="video-name">
         <p class="video-title"><b>{{videoCtrl.video.name}}</b></p>
-        <p>{{'video.OF' | translate}} <B>{{videoCtrl.video.user.name}}</B> | {{'video.SINCE' | translate}} <span >{{videoCtrl.video.created_time}}</span> {{'video.YEARS' | translate}}</p>
+        <p>{{'video.OF' | translate}} <B>{{videoCtrl.video.user.name}}</B> | {{'video.SINCE' | translate}} <span am-time-ago="videoCtrl.video.created_time"></span></p>
       </div>
     </div>
 

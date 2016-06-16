@@ -6,14 +6,13 @@
     .factory('videosFactory', videosFactory);
 
   /** @ngInject */
-  function videosFactory($log, $http, vimeoAPI) {
+  function videosFactory($http, vimeoAPI) {
     return {
       getVideos: function (category, page) {
         if (category) {
           return $http.get(
-            vimeoAPI.API_BASE_URL + 'categories/' + category + '/videos?page=' + page + '&per_page=12'
+            vimeoAPI.API_BASE_URL + 'categories/' + category + '/videos?page=' + page + '&per_page=' + vimeoAPI.PER_PAGE
           ).then(function successCallback(response) {
-            //$log.debug(response.data);
             return response.data;
           }, function errorCallback(error) {
             return error;
@@ -45,15 +44,13 @@
         }
       },
       searchVideos: function(query, page) {
-        if(query) {
           return $http.get(
-            vimeoAPI.API_BASE_URL + 'videos/?page=' + page + '&per_page=12&query='+ query
+            vimeoAPI.API_BASE_URL + 'videos/?page=' + page + '&per_page=' + vimeoAPI.PER_PAGE + '&query='+ query
           ).then(function successCallbac(response) {
             return response.data;
           }, function errorCallback(error) {
             return error;
           })
-        }
       }
     }
   }

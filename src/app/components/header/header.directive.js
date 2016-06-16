@@ -5,7 +5,7 @@
     .directive('headerSection', headerSection);
 
   /** @ngInject */
-  function headerSection(){
+  function headerSection($rootScope){
     return {
       restrict: 'E',
       scope: {
@@ -15,12 +15,11 @@
       templateUrl: 'app/components/header/header.html',
       controller: 'HeaderController',
       controllerAs: 'headerCtrl',
-      link: function(scope, element, attrs) {
+      link: function(scope) {
         scope.searchForVideos = function(){
-          var query = {
-            query: 'parkour'
-          };
-          scope.searchVideos(query);
+          var query = 'nba';
+          //scope.searchVideos(query);
+          $rootScope.$broadcast('search', query);
         };
       }
     }

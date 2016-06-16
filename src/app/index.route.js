@@ -92,7 +92,7 @@
         }
       })
       .state('home.search', {
-        url: '/search/:query?page',
+        url: '/search?query?page',
         params: {
           query: '',
           page: ''
@@ -100,12 +100,13 @@
         resolve: {
           /** @ngInject */
           videos: function($stateParams, videosFactory) {
-            return videosFactory.searchVideos($stateParams.query, $stateParams.page)
+            var page = $stateParams.page;
+            return videosFactory.searchVideos($stateParams.query, page)
           }
         },
         views: {
           'content@home': {
-            templateUrl: 'app/components/categoy/categoy.html',
+            templateUrl: 'app/components/category/category.html',
             controller: 'CategoryController',
             controllerAs: 'categoryCtrl'
           }

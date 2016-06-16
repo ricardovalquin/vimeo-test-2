@@ -34,6 +34,7 @@
         var links = categories.map(function(category){
             var links = {};
             links.id = category.id;
+            links.name = category.name;
             return links;
         });
         return links;

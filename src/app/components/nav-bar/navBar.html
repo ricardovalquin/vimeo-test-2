@@ -4,6 +4,6 @@
     <img src="../../../assets/images/vimeotest-logo.png" alt="Vimeo test app" width="270" height="70">
   </div>
   <div class="nav-categories">
-    <p ng-repeat="link in links | limitTo:8" ng-click="goToCategory({category: link.id})" ng-class="{active: activeLink == link.id}">{{link.id}}{{activeLink}}</p>
+    <p ng-repeat="link in links | limitTo:8" ui-sref="home.categories({categoryId: link.id, page: '1'})" ui-sref-active="active">{{link.name}}</p><!--ng-click="goToCategory({category: link.id})"-->
   </div>
 </aside>

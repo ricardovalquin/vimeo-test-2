@@ -18,7 +18,7 @@
      templateUrl: 'app/components/nav-bar/navBar.html',
      controller: 'NavBarController',
      controllerAs: 'navCtrl',
-     link: function(scope, element, attrs) {
+     link: function(scope) {
        scope.goToCategory = function(link) {
          scope.clickLink(link);
        };
