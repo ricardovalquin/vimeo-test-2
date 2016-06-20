@@ -17,8 +17,7 @@
       controllerAs: 'headerCtrl',
       link: function(scope) {
         scope.searchForVideos = function(){
-          var query = 'nba';
-          //scope.searchVideos(query);
+          var query = angular.element(document.querySelector('#search'))[0].value;
           $rootScope.$broadcast('search', query);
         };
       }

@@ -5,7 +5,7 @@
     .module('vimeoTest2', [
       'ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngMessages', 'ngAria',
       'ui.router', 'ui.bootstrap', 'pascalprecht.translate', 'tmh.dynamicLocale',
-      'angularMoment'
+      'angularMoment', 'ui.keypress'
     ]);
 
 })();

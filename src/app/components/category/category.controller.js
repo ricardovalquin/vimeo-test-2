@@ -9,7 +9,7 @@
     var vm = this;
     vm.videos = videos;
     vm.totalVideos = videos.total;
-    vm.maxSize = 100;
+    vm.maxSize = 3;
     vm.perPage = 12;
     vm.page = $stateParams.page;
 

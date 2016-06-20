@@ -1,22 +1,19 @@
 {
   "name": "vimeoTest2",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "dependencies": {
-    "angular-animate": "~1.5.3",
-    "angular-cookies": "~1.5.3",
-    "angular-touch": "~1.5.3",
-    "angular-sanitize": "~1.5.3",
-    "angular-messages": "~1.5.3",
-    "angular-aria": "~1.5.3",
+    "angular-animate": "~1.5.6",
+    "angular-cookies": "~1.5.6",
+    "angular-touch": "~1.5.6",
+    "angular-sanitize": "~1.5.6",
+    "angular-messages": "~1.5.6",
+    "angular-aria": "~1.5.6",
     "angular-ui-router": "~0.2.15",
     "bootstrap-sass": "~3.3.5",
     "angular-bootstrap": "~1.3.3",
-    "malarkey": "yuanqing/malarkey#~1.3.1",
-    "angular-toastr": "~1.5.0",
     "moment": "~2.10.6",
     "animate.css": "~3.4.0",
-    "angular": "~1.5.3",
-    "normalize-css": "^4.1.1",
+    "angular": "~1.5.6",
     "angular-translate": "^2.11.0",
     "angular-translate-loader-static-files": "^2.11.0",
     "angular-translate-storage-local": "^2.11.0",
@@ -24,10 +21,11 @@
     "angular-dynamic-locale": "^0.1.32",
     "angular-i18n": "^1.5.6",
     "animateCSS": "^1.2.1",
-    "angular-moment": "^0.10.3"
+    "angular-moment": "^0.10.3",
+    "angular-ui-keypress": "angular-ui-utils#bower-keypress"
   },
   "devDependencies": {
-    "angular-mocks": "~1.5.3"
+    "angular-mocks": "~1.5.6"
   },
   "overrides": {
     "bootstrap-sass": {
@@ -42,6 +40,6 @@
     }
   },
   "resolutions": {
-    "angular": "~1.5.3"
+    "angular": "~1.5.6"
   }
 }

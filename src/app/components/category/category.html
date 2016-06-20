@@ -11,9 +11,8 @@
 
     <div class="paginator">
       <div class="pagination-container">
-        <!--<uib-pagination total-items="vm.totalVideos" ng-model="vm.page" ng-change="changePage()"></uib-pagination>-->
-        <uib-pagination total-items="vm.totalVideos" ng-model="vm.page" max-size="vm.maxSize"
-                        items-per-page="vm.perPage" ng-change="vm.changePage()" boundary-link-numbers="true" rotate="false"></uib-pagination>
+        <uib-pagination total-items="categoryCtrl.totalVideos" ng-model="categoryCtrl.page" max-size="categoryCtrl.maxSize" class="pagination-sm"
+                        items-per-page="categoryCtrl.perPage" ng-change="categoryCtrl.changePage()" boundary-link-numbers="true" rotate="false"></uib-pagination>
       </div>
     </div>
   </div>

@@ -9,9 +9,6 @@
   function MainController($log, $state, $stateParams, links, categories) {
     var vm = this;
     vm.links = links;
-    vm.maxSize = 100;
-    vm.perPage = 12;
-    vm.page = $stateParams.page;
     vm.active = $stateParams.categoryId;
     $state.go('home.categories', {categoryId: categories[0].id, 'page': 1});
 
