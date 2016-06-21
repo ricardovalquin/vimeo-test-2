@@ -10,18 +10,11 @@
     $stateProvider
       .state('home', {
         url:'',
-        //abstract: true,
-        views: {
-          'wrapper@': {
-            templateUrl: 'app/main/main.html',
-            controller: 'MainController',
-            controllerAs: 'mainCtrl'
-          }
-        },
+        abstract: true,
         resolve: {
           /** @ngInject */
           categoriesAPIResponse: function(CategoriesFactory){
-            return CategoriesFactory.all(); // this returns a promise that returns an object with the categories
+            return CategoriesFactory.all();
           },
           categories: function(CategoriesFactory, categoriesAPIResponse){
             var categories;
@@ -41,11 +34,11 @@
       })
       .state('home.categories', {
         url: '/category/:categoryId?page',
-        //onEnter: function($state, $stateParams, categories) {
-        //  if(!$stateParams.categoryId && categories.length > 0){
-        //    $state.go('home.categories', {categoryId: categories[0].id, 'page': 1});
-        //  }
-        //},
+        onEnter: function($state, $stateParams, categories) {
+          if(!$stateParams.categoryId && categories.length > 0){
+            $state.go('home.categories', {categoryId: categories[0].id, 'page': 1});
+          }
+        },
         params: {
           categoryId: '',
           page: ''
@@ -58,13 +51,12 @@
           }
         },
         views: {
-          'content@home': {
+          'wrapper@': {
             templateUrl: 'app/components/category/category.html',
             controller: 'CategoryController',
             controllerAs: 'categoryCtrl'
           }
         }
-
       })
       .state('home.categories.detail', {
         url: '/:videoId',
@@ -74,7 +66,6 @@
           }
         },
         params: {
-          categoryId: '',
           videoId: ''
         },
         resolve: {
@@ -84,7 +75,7 @@
           }
         },
         views: {
-          'content@home': {
+          'wrapper@': {
             templateUrl: 'app/components/video/video.html',
             controller: 'VideoController',
             controllerAs: 'videoCtrl'
@@ -105,7 +96,7 @@
           }
         },
         views: {
-          'content@home': {
+          'wrapper@': {
             templateUrl: 'app/components/category/category.html',
             controller: 'CategoryController',
             controllerAs: 'categoryCtrl'

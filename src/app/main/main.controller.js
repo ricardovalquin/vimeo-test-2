@@ -6,11 +6,10 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($log, $state, $stateParams, links, categories) {
+  function MainController($state, $stateParams, links, categories) {
     var vm = this;
     vm.links = links;
     vm.active = $stateParams.categoryId;
-    $state.go('home.categories', {categoryId: categories[0].id, 'page': 1});
 
     vm.changeCategory = function(category){
       $state.go('home.categories', {categoryId: category, 'page': 1});

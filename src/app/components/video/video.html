@@ -1,33 +1,42 @@
 <section class="video-view">
-  <div class="video-view-wrapper">
-    <div class="video-container">
-      <div class="video">
-        <iframe ng-src="{{videoCtrl.videoUrl}}" frameborder="0" webkitallowfullscreen mozallowfullscreen
-                allowfullscreen></iframe>
+  <nav-bar links="videoCtrl.links" active="videoCtrl.active" click-link="videoCtrl.changeCategory(category)"></nav-bar>
+  <header-section search-videos="videoCtrl.search(query)"></header-section>
+  <div>
+    <div class="video-view-wrapper">
+      <div class="video-container">
+        <div class="video">
+          <iframe ng-src="{{videoCtrl.videoUrl}}" frameborder="0" webkitallowfullscreen mozallowfullscreen
+                  allowfullscreen></iframe>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="video-data">
-    <label>{{videoCtrl.video.stats.plays | thousandSuffix}}</label>
-    <label>{{videoCtrl.video.metadata.connections.likes.total | thousandSuffix}}</label>
-    <label>{{videoCtrl.video.metadata.connections.pictures.total | thousandSuffix}}</label>
-    <label class="video-comments">{{videoCtrl.video.metadata.connections.comments.total | thousandSuffix}}</label>
-  </div>
-
-  <div class="video-text">
-    <div class="title">
-      <div class="image">
-        <img ng-if="videoCtrl.video.user.pictures.sizes[1].link" ng-src="{{videoCtrl.video.user.pictures.sizes[1].link}}" alt="User logo">
-        <img ng-if="!videoCtrl.video.user.pictures.sizes[1].link" src="../../assets/images/vimeo-logo.png" alt="User logo" width="75" height="75">
-      </div>
-      <div class="video-name">
-        <p class="video-title"><b>{{videoCtrl.video.name}}</b></p>
-        <p>{{'video.OF' | translate}} <B>{{videoCtrl.video.user.name}}</B> | {{'video.SINCE' | translate}} <span am-time-ago="videoCtrl.video.created_time"></span></p>
-      </div>
+    <div class="video-data">
+      <label>{{videoCtrl.video.stats.plays | thousandSuffix}}</label>
+      <label>{{videoCtrl.video.metadata.connections.likes.total | thousandSuffix}}</label>
+      <label>{{videoCtrl.video.metadata.connections.pictures.total | thousandSuffix}}</label>
+      <label class="video-comments">{{videoCtrl.video.metadata.connections.comments.total | thousandSuffix}}</label>
     </div>
 
-    <div class="video-description">
-      <div>{{videoCtrl.video.description}}</div>
+    <div class="video-text">
+      <div class="title">
+        <div class="image">
+          <img ng-if="videoCtrl.video.user.pictures.sizes[1].link"
+               ng-src="{{videoCtrl.video.user.pictures.sizes[1].link}}" alt="User logo">
+          <img ng-if="!videoCtrl.video.user.pictures.sizes[1].link" src="../../assets/images/vimeo-logo.png"
+               alt="User logo" width="75" height="75">
+        </div>
+        <div class="video-name">
+          <p class="video-title"><b>{{videoCtrl.video.name}}</b></p>
+          <p>{{'video.OF' | translate}} <B>{{videoCtrl.video.user.name}}</B> | {{'video.SINCE' | translate}} <span
+            am-time-ago="videoCtrl.video.created_time"></span></p>
+        </div>
+      </div>
+
+      <div class="video-description">
+        <div>{{videoCtrl.video.description}}</div>
+      </div>
     </div>
   </div>
+  <footer-section></footer-section>
+
 </section>
