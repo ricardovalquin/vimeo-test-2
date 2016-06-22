@@ -9,7 +9,7 @@
   function runBlock($rootScope, $http, $state, vimeoAPI) {
     $http.defaults.headers.common.Authorization = 'Bearer ' + vimeoAPI.ACCESS_TOKEN;
 
-    var searchEvent = $rootScope.$on('search', function(event, data) {
+    var searchEvent = $rootScope.$on('search-box:query', function(event, data) {
       $state.go('home.search', {query: data, 'page': 1})
     });
 

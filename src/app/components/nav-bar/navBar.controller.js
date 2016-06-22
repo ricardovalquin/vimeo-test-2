@@ -6,10 +6,8 @@
     .controller('NavBarController', NavBarController);
 
   /** @ngInject */
-  function NavBarController($log, $state, $stateParams) {
+  function NavBarController($state) {
     var vm = this;
-    var params = $stateParams;
-    $log.debug(params);
     vm.goToCategory = function(categoryId) {
       $state.go('home.categories', {categoryId: categoryId});
     };

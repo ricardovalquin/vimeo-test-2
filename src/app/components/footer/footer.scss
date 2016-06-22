@@ -1,3 +1,7 @@
+$footer-bg-color: #eeeeee !default;
+$border-color: #D2D2D2 !default;
+$gt-sm-min-width: 960px !default;
+
 .footer-section {
   bottom: 0;
   height: 30px;
@@ -7,10 +11,10 @@
   margin-left: 300px;
   padding-left: 10px;
   width: calc(100% - 300px);
-  background-color: #eeeeee;
-  border-top: 1px solid #D2D2D2;
+  background-color: $footer-bg-color;
+  border-top: 1px solid $border-color;
 
-  @media (max-width: 960px) {
+  @media (max-width: $gt-sm-min-width) {
     width: 100%;
     margin-left: 0;
   }
@@ -22,11 +26,3 @@
     padding-right: 10px;
   }
 }
-
-//.wrapper {
-//  margin-left: 300px !important;
-//
-//  @media (max-width: 960px) {
-//    margin-left: 0;
-//  }
-//}

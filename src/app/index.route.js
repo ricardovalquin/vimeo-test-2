@@ -52,16 +52,16 @@
         },
         views: {
           'wrapper@': {
-            templateUrl: 'app/components/category/category.html',
+            templateUrl: 'app/home/home.html',
             controller: 'CategoryController',
-            controllerAs: 'categoryCtrl'
+            controllerAs: 'vm'
           }
         }
       })
-      .state('home.categories.detail', {
-        url: '/:videoId',
+      .state('home.detail', {
+        url: '/videos/:videoId',
         onEnter: function($state, $stateParams) {
-          if(!$stateParams.categoryId && !$stateParams.videoId) {
+          if(!$stateParams.videoId) {
             $state.go('home.categories');
           }
         },
@@ -76,9 +76,9 @@
         },
         views: {
           'wrapper@': {
-            templateUrl: 'app/components/video/video.html',
+            templateUrl: 'app/detail/video.html',
             controller: 'VideoController',
-            controllerAs: 'videoCtrl'
+            controllerAs: 'vm'
           }
         }
       })
@@ -97,9 +97,9 @@
         },
         views: {
           'wrapper@': {
-            templateUrl: 'app/components/category/category.html',
+            templateUrl: 'app/home/home.html',
             controller: 'CategoryController',
-            controllerAs: 'categoryCtrl'
+            controllerAs: 'vm'
           }
         }
       });

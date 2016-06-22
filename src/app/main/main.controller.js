@@ -6,7 +6,7 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($state, $stateParams, links, categories) {
+  function MainController($state, $stateParams, links) {
     var vm = this;
     vm.links = links;
     vm.active = $stateParams.categoryId;
@@ -17,7 +17,7 @@
 
     vm.videoDetail = function(video){
       var id = video.uri.split('/')[2];
-      $state.go('home.categories.detail', {videoId: id});
+      $state.go('home.detail', {videoId: id});
     };
 
     vm.search = function(query) {

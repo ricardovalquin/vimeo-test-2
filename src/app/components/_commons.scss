@@ -9,7 +9,6 @@ body {
 }
 
 .main-app-container {
-  //width: calc(100% - 300px);
   width: 100%;
   background-color: white;
   display: inline-block;
@@ -21,18 +20,3 @@ body {
     height: 100%;
   }
 }
-//
-//.wrapper {
-//  margin-left: 300px !important;
-//
-//  @media (max-width: 960px) {
-//    margin-left: 0;
-//  }
-//}
-
-//
-////Import partials
-//@import "nav-bar";
-//@import "header";
-//@import "footer";
-//@import "home";

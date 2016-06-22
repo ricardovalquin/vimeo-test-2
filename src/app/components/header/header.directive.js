@@ -8,9 +8,7 @@
   function headerSection($rootScope){
     return {
       restrict: 'E',
-      scope: {
-        searchVideos: '&'
-      },
+      scope: {},
       replace: true,
       templateUrl: 'app/components/header/header.html',
       controller: 'HeaderController',
@@ -18,7 +16,7 @@
       link: function(scope) {
         scope.searchForVideos = function(){
           var query = angular.element(document.querySelector('#search'))[0].value;
-          $rootScope.$broadcast('search', query);
+          $rootScope.$broadcast('search-box:query', query);
         };
       }
     }

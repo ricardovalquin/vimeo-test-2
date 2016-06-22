@@ -1,11 +1,19 @@
+//break points
+$gt-sm-min-width: 960px !default;
+
+// General variables
+$nav-bar-width: 300px !default;
+$footer-height: 50px !default;
+$border-color: #D2D2D2 !default;
+
 .video-view {
-  padding-bottom: 50px;
+  padding-bottom: $footer-height;
 }
 
 .video-view-wrapper {
-  margin-left: 300px;
+  margin-left: $nav-bar-width;
 
-  @media (max-width: 960px) {
+  @media (max-width: $gt-sm-min-width) {
     margin-left: 0;
   }
 }
@@ -14,7 +22,7 @@
 .video-container {
   clear: both;
   overflow: scroll;
-  padding-top: 70px;
+  padding-top: $header-height;
   position: relative;
 
   .video {
@@ -48,9 +56,9 @@
 .video-data {
   color: #879cab;
   text-align: right;
-  margin-left: 300px;
+  margin-left: $nav-bar-width;
   padding-right: 10px;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid $border-color;
 
   @media (max-width: 960px) {
     margin-left: 0;
@@ -58,25 +66,47 @@
 
   label {
     margin: 0 10px;
-  }
-
-  .video-comments {
 
     &::before {
-      background: url('../../../assets/images/vimeotest-assets.png') no-repeat 0 0;
+      display: inline-block;
+      background: url('../../assets/images/vimeotest-assets.png') no-repeat;
       content: " ";
-      width: 100px;
-      height: 100px;
+      width: 25px;
+      height: 13px;
+    }
+
+    &:first-child {
+      &::before {
+        background-position: -37px 0;
+      }
+    }
+
+    &:nth-child(2) {
+      &::before {
+        background-position: -37px -12px;
+      }
+    }
+
+    &:nth-child(3) {
+      &::before {
+        background-position: -37px -26px;
+      }
+    }
+
+    &:nth-child(4) {
+      &::before {
+        background-position: -37px -39px;
+      }
     }
   }
 }
 
 .video-text {
   margin-top: 30px;
-  margin-left: 300px;
+  margin-left: $nav-bar-width;
   padding-left: 20px;
 
-  @media (max-width: 960px) {
+  @media (max-width: $gt-sm-min-width) {
     margin-left: 0;
   }
 
@@ -92,7 +122,6 @@
 
   .image {
     width: auto;
-    //margin-right: 10px;
     display: inline-block;
     position: absolute;
     left: -75px;
@@ -120,7 +149,7 @@
     }
 
     .video-title {
-      width: 300px;
+      width: $nav-bar-width;
       color: #635492;
       font-size: 40px;
       margin-bottom: 0;

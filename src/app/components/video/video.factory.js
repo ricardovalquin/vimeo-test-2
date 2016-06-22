@@ -30,6 +30,16 @@
             }
           );
         }
+        else if(!category && video){
+          return $http.get(
+            vimeoAPI.API_BASE_URL + 'videos/'+ video
+          ).then(function successCallback(response) {
+              return response.data;
+            }, function errorCallcabk(error) {
+              return error;
+            }
+          );
+        }
       },
       formatVideos: function(videos){
         if(videos) {

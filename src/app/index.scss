@@ -18,8 +18,8 @@ $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/"
   padding: 0.2em 0;
 }
 
-@import "components/commons";
 @import "components/variables";
+@import "components/commons";
 
 /**
  *  Do not remove the comments below. It's the markers used by gulp-inject to inject

@@ -5,14 +5,14 @@
     .controller('CategoryController', CategoryController);
 
   /** @ngInject */
-  function CategoryController($log, $state, $stateParams, videos, links) {
+  function CategoryController($state, $stateParams, videos, links, vimeoAPI) {
     var vm = this;
     vm.active = $stateParams.categoryId;
     vm.links = links;
     vm.videos = videos;
     vm.totalVideos = videos.total;
-    vm.maxSize = 3;
-    vm.perPage = 12;
+    vm.maxSize = vimeoAPI.MAX_SIZE;
+    vm.perPage = vimeoAPI.PER_PAGE;
     vm.page = $stateParams.page;
 
     vm.changeCategory = function(category){
@@ -24,14 +24,12 @@
     };
 
     vm.changePage = function () {
-      $log.debug(vm.page);
-      $log.debug('changePage');
       $state.go('.', { page: vm.page});
     };
 
     vm.videoDetail = function(video){
         var id = video.uri.split('/')[2];
-        $state.go('home.categories.detail', {categoryId: $stateParams.categoryId, videoId: id});
+        $state.go('home.detail', {videoId: id});
     }
 
   }
