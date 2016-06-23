@@ -5,9 +5,8 @@
     .module('vimeoTest2')
     .controller('HeaderController', HeaderController);
 
-
   /** @ngInject */
-  function HeaderController(){ //$document
+  function HeaderController(){
     var vm = this;
 
     vm.showNav = function () {

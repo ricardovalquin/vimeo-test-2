@@ -1,7 +1,7 @@
 <section class="video-view">
   <nav-bar links="vm.links" active="vm.active" click-link="vm.changeCategory(category)"></nav-bar>
   <header-section search-videos="vm.search(query)"></header-section>
-  <div>
+  <div class="video-detail-container">
     <div class="video-view-wrapper">
       <div class="video-container">
         <div class="video">
@@ -16,14 +16,13 @@
       <label>{{vm.video.metadata.connections.pictures.total | thousandSuffix}}</label>
       <label class="video-comments">{{vm.video.metadata.connections.comments.total | thousandSuffix}}</label>
     </div>
-
     <div class="video-text">
       <div class="title">
         <div class="image">
+          <img ng-if="!vm.video.user.pictures.sizes[1].link" src="assets/images/vimeo-logo.png"
+               alt="User logo" width="75" height="75">
           <img ng-if="vm.video.user.pictures.sizes[1].link"
                ng-src="{{vm.video.user.pictures.sizes[1].link}}" alt="User logo">
-          <img ng-if="!vm.video.user.pictures.sizes[1].link" src="../../assets/images/vimeo-logo.png"
-               alt="User logo" width="75" height="75">
         </div>
         <div class="video-name">
           <p class="video-title"><b>{{vm.video.name}}</b></p>

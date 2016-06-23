@@ -1,14 +1,16 @@
 $footer-bg-color: #eeeeee !default;
 $border-color: #D2D2D2 !default;
 $gt-sm-min-width: 960px !default;
+$footer-height: 40px !default;
+$nav-bar-width: 300px !default;
+
 
 .footer-section {
   bottom: 0;
-  height: 30px;
+  height: $footer-height;
   z-index: 9999;
-  position: fixed;
   text-align: right;
-  margin-left: 300px;
+  margin-left: $nav-bar-width;
   padding-left: 10px;
   width: calc(100% - 300px);
   background-color: $footer-bg-color;

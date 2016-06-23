@@ -9,11 +9,11 @@ $hover-category-color: rgba(111,96,161,1) !default;
 $active-category-color: #FFFFFF !default;
 
 .nav-bar-container {
-  width: $nav-bar-width;
   height: 100%;
   display: inline-block;
-  vertical-align: top;
   position: fixed;
+  vertical-align: top;
+  width: $nav-bar-width;
 
   background: rgba(111,96,161,1);
   background: -moz-linear-gradient(top, rgba(111,96,161,1) 0%, rgba(83,70,125,1) 50%, rgba(44,34,77,1) 100%);
@@ -30,19 +30,20 @@ $active-category-color: #FFFFFF !default;
   }
 
   .close-nav {
-    padding: 10px;
+    color: $active-category-color;
     display: none;
     float: right;
-    color: $active-category-color;
+    font-size: 25px;
     outline: none;
+    padding: 10px;
 
     @media (max-width: $gt-sm-min-width){
       display: inline-block;
     }
 
     a {
-      cursor: pointer;
       color: $active-category-color;
+      cursor: pointer;
       text-decoration: none;
     }
   }
@@ -50,29 +51,29 @@ $active-category-color: #FFFFFF !default;
   .app-name {
     cursor: pointer;
     height: 60px;
-    margin-bottom: 30px;
+    margin: 30px 0;
     margin-left: 25px;
     width: 100%;
   }
 
   .nav-categories {
     p {
-      outline: none;
-      display: block;
       color: $inactive-category-color;
-      padding: 0 10px;
+      cursor: pointer;
+      display: block;
       font-size: 20px;
       font-weight: normal;
-      cursor: pointer;
+      outline: none;
+      padding: 0 10px;
 
       &::before {
-        width: 5px;
+        background-color: $inactive-category-color;
         content: '';
+        display: inline-block;
         height: 35px;
         margin: 0 10px;
-        display: inline-block;
         vertical-align: middle;
-        background-color: $inactive-category-color;
+        width: 5px;
 
       }
 
@@ -86,8 +87,8 @@ $active-category-color: #FFFFFF !default;
 
 .open {
   display: block;
-  z-index: 2;
   width: $nav-bar-width;
+  z-index: 2;
 }
 
 p.active {

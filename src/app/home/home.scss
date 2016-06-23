@@ -6,8 +6,17 @@ $nav-bar-width: 300px !default;
 $video-text-color: #635592 !default;
 
 .home-container {
+
   .video-wrapper {
     margin-left: $nav-bar-width;
+    min-height: 100%;
+    margin-bottom: $footer-height;
+
+    &::after {
+      content: "";
+      display: block;
+      height: $footer-height;
+    }
 
     @media (max-width: $gt-sm-min-width){
       margin-left: 0;

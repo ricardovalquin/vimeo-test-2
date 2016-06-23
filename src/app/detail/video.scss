@@ -3,11 +3,22 @@ $gt-sm-min-width: 960px !default;
 
 // General variables
 $nav-bar-width: 300px !default;
-$footer-height: 50px !default;
+$footer-height: 40px !default;
 $border-color: #D2D2D2 !default;
 
-.video-view {
-  padding-bottom: $footer-height;
+//video detail
+$title-color: #635492 !default;
+
+
+.video-detail-container {
+  min-height: 100%;
+  margin-bottom: -$footer-height;
+
+  &::after {
+    content: "";
+    display: block;
+    height: $footer-height;
+  }
 }
 
 .video-view-wrapper {
@@ -54,24 +65,26 @@ $border-color: #D2D2D2 !default;
 
 
 .video-data {
+  border-bottom: 1px solid $border-color;
   color: #879cab;
-  text-align: right;
+  height: $footer-height;
   margin-left: $nav-bar-width;
   padding-right: 10px;
-  border-bottom: 1px solid $border-color;
+  text-align: right;
 
   @media (max-width: 960px) {
     margin-left: 0;
   }
 
   label {
-    margin: 0 10px;
+    margin: 10px 6px;
+    font-weight: normal;
 
     &::before {
       display: inline-block;
       background: url('../../assets/images/vimeotest-assets.png') no-repeat;
       content: " ";
-      width: 25px;
+      width: 23px;
       height: 13px;
     }
 
@@ -149,38 +162,26 @@ $border-color: #D2D2D2 !default;
     }
 
     .video-title {
-      width: $nav-bar-width;
-      color: #635492;
+      color: $title-color;
       font-size: 40px;
       margin-bottom: 0;
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
     }
   }
 
   .video-description {
     width: 80%;
     margin-right: 20px;
+    margin-bottom: 40px;
     div {
-      white-space: normal;
       display: block;
-      display: -webkit-box;
-      max-width: 100%;
-      height: 73px;
-      margin: 0 auto;
       font-size: 24px;
-      line-height: 1.5;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      font-weight: normal;
+      margin: 0 auto;
+      max-width: 100%;
     }
 
     @media (max-width: 600px) {
-      width: 100%;
       padding-right: 10px;
+      width: 100%;
     }
   }
 }

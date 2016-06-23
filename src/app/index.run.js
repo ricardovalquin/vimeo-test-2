@@ -13,7 +13,7 @@
       $state.go('home.search', {query: data, 'page': 1})
     });
 
-    $rootScope.$on('destroy', function() {
+    $rootScope.$on('$destroy', function() {
       searchEvent();
     });
   }
